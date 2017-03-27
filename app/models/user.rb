@@ -11,6 +11,8 @@ class User < ApplicationRecord
          def is_member_of?(group)
         participated_groups.include?(group)
             end
+            has_many :groups
+            has_many :posts
             def join!(group)
     participated_groups << group
   end
